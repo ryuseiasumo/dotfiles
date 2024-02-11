@@ -73,18 +73,9 @@ zinit wait lucid for \
 
 #見た目整えるstarshipをいれている
 eval "$(starship init zsh)"
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/hatar/.pyenv/versions/anaconda3-2020.07/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/hatar/.pyenv/versions/anaconda3-2020.07/etc/profile.d/conda.sh" ]; then
-        . "/Users/hatar/.pyenv/versions/anaconda3-2020.07/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/hatar/.pyenv/versions/anaconda3-2020.07/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+# rye (asdfを入れた後に, $asdf plugin add rye ◯.◯◯.◯で入れる)
+source "$HOME/.rye/env"
